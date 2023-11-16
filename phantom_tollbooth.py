@@ -2935,3 +2935,135 @@
     Illustrations Copyright © 1961 by Jules Feiffer
     ISBN: 0-394-82199-8
 """
+
+def text_strings():
+    book_as_string=get_text().split(" ")
+    for strings in book_as_string:
+        strings.lower()
+        if strings=="and":
+            book_as_string.remove(strings)
+        elif strings=="or":
+            book_as_string.remove(strings)
+    book_as_string=list(filter(None,book_as_string))
+            
+    print(type(book_as_string))
+    print(book_as_string[:50])
+
+text_strings()
+
+def counter(text):
+    string_list=text.split(" ")
+    i=0
+    for each_word in string_list:
+        string_list[i]=each_word.lower()
+        i+=1
+    string_list=list(filter(None,string_list))
+    print(len(string_list))
+    return string_list
+
+
+def unique_words(string_list):
+    unique=[]
+    for string in string_list:
+        if string not in unique:
+            unique.append(string)
+    return unique
+
+def stoopid(string_list):
+    word_counter=[]
+    counter={}
+    i=0
+    for words in string_list:
+        if words not in word_counter:
+            word_counter.append(words)
+        else:
+            counter[i]=words
+            i+=1
+    return counter
+
+
+# if each_word=="and":
+#             del string_list[i]
+#         elif each_word=="or":
+#             del string_list[i]
+def comparator(string_list):
+    new_string_list={}
+    freq_count={}
+    n=0
+    m=2
+    for each_word in string_list:
+        if each_word is not new_string_list:
+            new_string_list[n]=each_word
+            n+=1
+        else:
+            freq_count[m]=each_word
+    print(len(freq_count))
+
+
+def printer():
+    print(len(set(words.lower() for words in get_text().split(" "))))
+
+def stringed_book(text):
+    stringed_book=list(text.split(" "))
+    i=0
+    for words in stringed_book:
+        stringed_book[i]=words.lower()
+        i+=1
+    while("" in stringed_book):
+        stringed_book.remove("")
+    print(len(stringed_book))
+    return stringed_book
+
+def conjunction_deletor(string_list):
+    for words in string_list:
+        if words=="and" or "or":
+            string_list.remove(words)
+    return string_list
+
+def word_dict(string_list):
+    word_counter={}
+    dict={}
+    i=0
+    n=0
+    for element in string_list:
+        if element in dict:
+            word_counter[n]=element
+            n+=1
+        else:
+            dict[i]=element
+            i+=1
+            
+    print(len(dict))
+    print(len(word_counter))
+
+        
+    
+    
+           
+   
+    #passing value through dictionary to get frequency sorted words...?
+    
+    # sorting_list=[]
+    # new=[]
+    # for words in frequency:
+    #     if frequency[words]>min(top_50):
+    #         new.append(frequency[words])
+    #         sorting_list.append(words)
+    # print(sorting_list)
+            #print(f'"{words}" occurred {frequency[words]} times.')
+    
+   
+    #print(frequency.keys()[top_n_occurences[1]])
+
+def entire_book():
+    print(len(stringed_book(get_text())))
+
+def main():
+    string_book=stringed_book(get_text())
+    word_dict(string_book)
+    # printer()
+    
+
+# main()
+
+#Tomorrow: Learn how to ignore case and write functions to remove certain words or characters even
